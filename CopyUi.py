@@ -1,0 +1,113 @@
+# -*- coding: utf-8 -*-
+
+# Form implementation generated from reading ui file 'CopyUi.ui'
+#
+# Created by: PyQt5 UI code generator 5.10.1
+#
+# WARNING! All changes made in this file will be lost!
+
+from PyQt5 import QtCore, QtGui, QtWidgets
+
+class Ui_MainWindow(object):
+    def setupUi(self, MainWindow):
+        MainWindow.setObjectName("MainWindow")
+        MainWindow.resize(722, 304)
+        self.centralwidget = QtWidgets.QWidget(MainWindow)
+        self.centralwidget.setObjectName("centralwidget")
+        self.copyButton = QtWidgets.QPushButton(self.centralwidget)
+        self.copyButton.setGeometry(QtCore.QRect(270, 250, 100, 25))
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Maximum, QtWidgets.QSizePolicy.Fixed)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.copyButton.sizePolicy().hasHeightForWidth())
+        self.copyButton.setSizePolicy(sizePolicy)
+        self.copyButton.setMaximumSize(QtCore.QSize(100, 16777215))
+        self.copyButton.setMouseTracking(False)
+        self.copyButton.setObjectName("copyButton")
+        self.layoutWidget = QtWidgets.QWidget(self.centralwidget)
+        self.layoutWidget.setGeometry(QtCore.QRect(9, 9, 701, 231))
+        self.layoutWidget.setObjectName("layoutWidget")
+        self.gridLayout = QtWidgets.QGridLayout(self.layoutWidget)
+        self.gridLayout.setContentsMargins(0, 0, 0, 0)
+        self.gridLayout.setObjectName("gridLayout")
+        self.source = QtWidgets.QTextEdit(self.layoutWidget)
+        self.source.setMaximumSize(QtCore.QSize(16777215, 25))
+        self.source.setObjectName("source")
+        self.gridLayout.addWidget(self.source, 0, 2, 1, 1)
+        self.sourceButton = QtWidgets.QPushButton(self.layoutWidget)
+        self.sourceButton.setObjectName("sourceButton")
+        self.gridLayout.addWidget(self.sourceButton, 0, 3, 1, 1)
+        self.dest = QtWidgets.QTextEdit(self.layoutWidget)
+        self.dest.setMaximumSize(QtCore.QSize(16777215, 25))
+        self.dest.setObjectName("dest")
+        self.gridLayout.addWidget(self.dest, 1, 2, 1, 1)
+        self.label_2 = QtWidgets.QLabel(self.layoutWidget)
+        self.label_2.setObjectName("label_2")
+        self.gridLayout.addWidget(self.label_2, 1, 0, 1, 1)
+        self.label = QtWidgets.QLabel(self.layoutWidget)
+        self.label.setObjectName("label")
+        self.gridLayout.addWidget(self.label, 0, 0, 1, 1)
+        self.destButton = QtWidgets.QPushButton(self.layoutWidget)
+        self.destButton.setObjectName("destButton")
+        self.gridLayout.addWidget(self.destButton, 1, 3, 1, 1)
+        self.progressBar = QtWidgets.QProgressBar(self.layoutWidget)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Fixed)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.progressBar.sizePolicy().hasHeightForWidth())
+        self.progressBar.setSizePolicy(sizePolicy)
+        self.progressBar.setProperty("value", 24)
+        self.progressBar.setObjectName("progressBar")
+        self.gridLayout.addWidget(self.progressBar, 2, 2, 1, 2)
+        self.label_3 = QtWidgets.QLabel(self.layoutWidget)
+        self.label_3.setObjectName("label_3")
+        self.gridLayout.addWidget(self.label_3, 2, 0, 1, 1)
+        self.label_4 = QtWidgets.QLabel(self.layoutWidget)
+        self.label_4.setObjectName("label_4")
+        self.gridLayout.addWidget(self.label_4, 3, 0, 1, 1)
+        self.progressBar_2 = QtWidgets.QProgressBar(self.layoutWidget)
+        self.progressBar_2.setProperty("value", 24)
+        self.progressBar_2.setObjectName("progressBar_2")
+        self.gridLayout.addWidget(self.progressBar_2, 3, 2, 1, 2)
+        self.label_5 = QtWidgets.QLabel(self.layoutWidget)
+        self.label_5.setMaximumSize(QtCore.QSize(16777215, 20))
+        self.label_5.setObjectName("label_5")
+        self.gridLayout.addWidget(self.label_5, 4, 0, 1, 1)
+        self.clabel = QtWidgets.QLabel(self.layoutWidget)
+        self.clabel.setText("")
+        self.clabel.setObjectName("clabel")
+        self.gridLayout.addWidget(self.clabel, 4, 1, 1, 3)
+        self.pushButton = QtWidgets.QPushButton(self.centralwidget)
+        self.pushButton.setGeometry(QtCore.QRect(380, 250, 89, 25))
+        self.pushButton.setObjectName("pushButton")
+        MainWindow.setCentralWidget(self.centralwidget)
+        self.statusbar = QtWidgets.QStatusBar(MainWindow)
+        self.statusbar.setObjectName("statusbar")
+        MainWindow.setStatusBar(self.statusbar)
+
+        self.retranslateUi(MainWindow)
+        QtCore.QMetaObject.connectSlotsByName(MainWindow)
+
+    def retranslateUi(self, MainWindow):
+        _translate = QtCore.QCoreApplication.translate
+        MainWindow.setWindowTitle(_translate("MainWindow", "Copy"))
+        self.copyButton.setText(_translate("MainWindow", "Copy"))
+        self.sourceButton.setText(_translate("MainWindow", "Choose"))
+        self.label_2.setText(_translate("MainWindow", "Destination Path:"))
+        self.label.setText(_translate("MainWindow", "Source File:"))
+        self.destButton.setText(_translate("MainWindow", "Choose"))
+        self.label_3.setText(_translate("MainWindow", "Current File:"))
+        self.label_4.setText(_translate("MainWindow", "Total:"))
+        self.label_5.setText(_translate("MainWindow", "Current File:"))
+        self.pushButton.setText(_translate("MainWindow", "Stop"))
+
+
+if __name__ == "__main__":
+    import sys
+    app = QtWidgets.QApplication(sys.argv)
+    MainWindow = QtWidgets.QMainWindow()
+    ui = Ui_MainWindow()
+    ui.setupUi(MainWindow)
+    MainWindow.show()
+    sys.exit(app.exec_())
+
