@@ -20,13 +20,33 @@ class CopyControl(QtWidgets.QMainWindow, Ui_MainWindow):
         self.pushButton.setEnabled(False)
         self.center()
         self.thread = None
+        
 
+
+    def setProgSingle(self, i):
+        self.progressBar.setValue(i)
+
+    def setProgTotal(self, i):
+        self.progressBar_2.setValue(i)
+
+    def setName(self, name):
+        self.clabel.setText(name)
+
+
+    def enableCopyButton(self):
+        self.copyButton.setEnabled(True)
+    
 
     def initThread(self):
-        self.thread = CopyOp(self.sourceloc,self.destination,self.progressBar,self.progressBar_2,self.copyButton,self.clabel)
+        self.thread = CopyOp(self.sourceloc,self.destination)
+        self.thread.signalBarSingle.connect(self.setProgSingle)
+        self.thread.signalBarTotal.connect(self.setProgTotal)
+        self.thread.signalFile.connect(self.setName)
+        self.thread.signalButton.connect(self.enableCopyButton)
 
     def copy(self):
 
+        
         self.progressBar.setValue(0)
         self.progressBar_2.setValue(0)
         self.copyButton.setEnabled(False)
